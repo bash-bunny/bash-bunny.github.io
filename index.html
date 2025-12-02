@@ -9,7 +9,7 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="prompt">bash-bunny@security</div>
+        <div class="prompt">bash-bunny@paranoidsec</div>
         <h1>Bash Bunny</h1>
         <p class="subtitle">Cybersecurity Specialist / Pentester / Red Team Operator</p>
         
@@ -27,6 +27,7 @@
         <p style="color: var(--dim); margin-bottom: 20px;">
             Cybersecurity specialist focused on offensive security operations, threat intelligence, and dark web research. 
             Experience in penetration testing, red team operations, OSINT investigations, and network security.
+            Founder of ParanoidS3c.
         </p>
         
         <div class="tags">
@@ -46,53 +47,74 @@
         <h2>Projects</h2>
         
         <div class="projects">
+          <a href="https://github.com/bash-bunny/DW_Crawler">
             <div class="project">
                 <h3>Dark Web Crawler</h3>
-                <p>Custom Bash-based crawler for dark web research and OSINT operations. Integrates with Shodan and Censys APIs for intelligence gathering.</p>
-                <div class="project-tech">bash · tor · osint · python</div>
+                <p>Custom Bash-based crawler for dark web research and OSINT operations.</p>
+                <div class="project-tech">bash · tor · osint</div>
             </div>
-            
+          </a>
+          
+          <a href="https://github.com/bash-bunny/dw_deanon">
             <div class="project">
-                <h3>NixOS Pentesting Environment</h3>
-                <p>Declarative, reproducible pentesting distribution built on NixOS. Optimized for red team operations with isolated environment support.</p>
-                <div class="project-tech">nixos · pentesting · devops</div>
+                <h3>Dark Web Deanonimization</h3>
+                <p>Custom python script to de-anonimize domains on the Onion network. It makes use of Shodan, Censys and Zoomeye API.</p>
+                <div class="project-tech">python · tor · osint</div>
             </div>
+          </a>
             
+          <a href="https://github.com/paranoidsec/paranoid-recon">
             <div class="project">
-                <h3>Security Toolchain</h3>
-                <p>Curated collection of offensive security tools and scripts for automated reconnaissance, exploitation, and post-exploitation.</p>
-                <div class="project-tech">python · bash · automation</div>
+                <h3>Paranoid Recon</h3>
+                <p>Bug bounty recon toolkit - subdomain enum, live hosts, service discovery, scope monitoring.</p>
+                <div class="project-tech">bugbounty · bash · automation</div>
             </div>
+          </a>
             
+          <a href="https://github.com/paranoidsec/paranoid-darkcrawler">
             <div class="project">
-                <h3>OSINT Framework</h3>
-                <p>Comprehensive framework for open-source intelligence gathering, combining multiple data sources and analysis techniques.</p>
-                <div class="project-tech">osint · intelligence · research</div>
+                <h3>Paranoid DarkCrawler</h3>
+                <p>Tor-based darkweb crawler for OSINT & research - metadata extraction, export JSON/CSV</p>
+                <div class="project-tech">osint · intelligence · research · tor</div>
             </div>
+          </a>
+
+          <a href="https://github.com/paranoidsec/paranoid-wpscan-report">
+            <div class="project">
+                <h3>Paranoid WPScan Report</h3>
+                <p>Turn WPScan noise into intelligence - CVE parsing, severity mapping, clean report</p>
+                <div class="project-tech">pentesting · automation · python</div>
+            </div>
+          </a>
+
         </div>
     </section>
     
     <!-- Talks -->
     <section data-section="TALKS">
         <h2>Talks & Presentations</h2>
-        
-        <div class="talk">
-            <h3>Building Your Own Dark Web Crawler for OSINT Operations</h3>
-            <div class="talk-date">Upcoming · 2025</div>
-            <p>Practical methodology for constructing custom dark web crawlers using Bash and integrating with OSINT platforms like Shodan and Censys.</p>
-        </div>
-        
+
         <div class="talk">
             <h3>NixOS for Offensive Security</h3>
-            <div class="talk-date">2024</div>
+            <div class="talk-date">Upcoming · 2026</div>
             <p>Exploring NixOS as a platform for creating reproducible, declarative pentesting environments with advanced isolation capabilities.</p>
         </div>
         
-        <div class="talk">
-            <h3>Dark Web Intelligence: Research Methodologies</h3>
-            <div class="talk-date">2024</div>
-            <p>Systematic approaches to dark web research combining custom crawlers, threat intelligence platforms, and ethical research frameworks.</p>
-        </div>
+        <a href="https://github.com/bash-bunny/RootedValencia2025">
+          <div class="talk">
+              <h3>Dark OSINT - De-anonimization dark web domains</h3>
+              <div class="talk-date">2025</div>
+              <p>Practical methodology for de-anonimizing dark web domains Bash and integrating with OSINT platforms like Shodan and Censys.</p>
+          </div>
+        </a>
+        
+        <a href="https://github.com/bash-bunny/JornadasSTIC2025">
+          <div class="talk">
+              <h3>Dark Web Intelligence: Research Methodologies</h3>
+              <div class="talk-date">2025</div>
+              <p>Systematic approaches to dark web research combining custom crawlers, threat intelligence platforms, and ethical research frameworks.</p>
+          </div>
+        </a>
     </section>
     
     <!-- Contact -->
