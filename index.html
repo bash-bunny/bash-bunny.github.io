@@ -3,39 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bash Bunny - Hacker Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bash Bunny | Cybersecurity Specialist</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg: #0a0a0f;
+            --fg: #c8c8d0;
+            --accent: #b967ff;
+            --secondary: #05ffa1;
+            --dim: #6a6a7a;
+            --border: #2a2a3a;
+        }
+        
+        body {
+            background: var(--bg);
+            color: var(--fg);
+            font-family: 'IBM Plex Mono', monospace;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            margin-bottom: 60px;
+            border: 1px solid var(--border);
+            padding: 30px;
+            background: rgba(42, 42, 58, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            object-fit: cover;
+        }
+        
+        .header-text {
+            flex: 1;
+        }
+        
+        .prompt {
+            color: var(--secondary);
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        
+        .prompt::before {
+            content: '[';
+            color: var(--dim);
+        }
+        
+        .prompt::after {
+            content: ']';
+            color: var(--dim);
+        }
+        
+        h1 {
+            font-size: 2em;
+            color: var(--fg);
+            font-weight: 500;
+            margin: 10px 0;
+        }
+        
+        .subtitle {
+            color: var(--dim);
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+        
+        a:hover {
+            border-bottom: 1px solid var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        
+        .social-links a::before {
+            content: '→ ';
+            color: var(--dim);
+        }
+        
+        section {
+            margin-bottom: 60px;
+            border: 1px solid var(--border);
+            padding: 30px;
+            background: rgba(42, 42, 58, 0.05);
+        }
+        
+        section::before {
+            content: '# ' attr(data-section);
+            display: block;
+            color: var(--secondary);
+            font-size: 0.85em;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-size: 1.3em;
+            color: var(--fg);
+            font-weight: 500;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .tag {
+            color: var(--dim);
+            font-size: 0.85em;
+            padding: 2px 0;
+        }
+        
+        .tag::before {
+            content: '• ';
+            color: var(--accent);
+        }
+        
+        .projects {
+            display: grid;
+            gap: 25px;
+        }
+        
+        .project {
+            border-left: 2px solid var(--border);
+            padding-left: 20px;
+            transition: border-color 0.2s;
+            margin-bottom: 20px;
+        }
+        
+        .project:hover {
+            border-left-color: var(--accent);
+        }
+        
+        .project h3 {
+            font-size: 1em;
+            font-weight: 500;
+            color: var(--fg);
+            margin-bottom: 8px;
+        }
+        
+        .project h3::before {
+            content: '$ ';
+            color: var(--secondary);
+        }
+        
+        .project p {
+            color: var(--dim);
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        
+        .project-tech {
+            margin-top: 8px;
+            font-size: 0.8em;
+            color: var(--accent);
+        }
+        
+        .talk {
+            margin-bottom: 25px;
+            border-left: 2px solid var(--border);
+            padding-left: 20px;
+            transition: border-color 0.2s;
+        }
+        
+        .talk:hover {
+            border-left-color: var(--accent);
+        }
+        
+        .talk h3 {
+            font-size: 1em;
+            font-weight: 500;
+            color: var(--fg);
+            margin-bottom: 5px;
+        }
+        
+        .talk h3::before {
+            content: '> ';
+            color: var(--secondary);
+        }
+        
+        .talk-date {
+            font-size: 0.85em;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        
+        .talk-date::before {
+            content: '[';
+            color: var(--dim);
+        }
+        
+        .talk-date::after {
+            content: ']';
+            color: var(--dim);
+        }
+        
+        .talk p {
+            font-size: 0.9em;
+            color: var(--dim);
+            line-height: 1.5;
+        }
+        
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .contact-list li {
+            color: var(--dim);
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            padding-left: 15px;
+        }
+        
+        .contact-list li::before {
+            content: '→';
+            color: var(--secondary);
+            margin-left: -15px;
+            margin-right: 8px;
+        }
+        
+        footer {
+            margin-top: 80px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--dim);
+            font-size: 0.85em;
+        }
+        
+        footer::before {
+            content: '[EOF]';
+            display: block;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.6em;
+            }
+            .social-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <canvas id="matrix"></canvas> <!-- Matrix rain background -->
+    <!-- Header -->
+    <header>
+        <div class="prompt">bash-bunny@paranoidsec</div>
+        <div class="header-content">
+            <img src="logo.jpg" alt="Bash Bunny Logo" class="logo">
+            <div class="header-text">
+                <h1>Bash Bunny</h1>
+                <p class="subtitle">Cybersecurity Specialist / Pentester / Red Team Operator</p>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://github.com/bash-bunny" target="_blank">github/personal</a>
+            <a href="https://github.com/paranoidsec" target="_blank">github/work</a>
+            <a href="https://x.com/_BashBunny_" target="_blank">x/personal</a>
+            <a href="https://x.com/ParanoidS3c" target="_blank">x/work</a>
+        </div>
+    </header>
     
-    <div class="container">
-        <header>
-            <img src="https://pbs.twimg.com/profile_images/1960042264396181504/VlPeAjob.jpg" alt="Profile Pic" class="profile-pic">
-            <h1>Bash Bunny</h1>
-            <p class="bio">Hacking | Linux | Bugbounty | OSINT #DarkOSINT ESP | ENG</p> <!-- Copy from your X bio -->
-        </header>
+    <!-- About -->
+    <section data-section="PROFILE">
+        <h2>About</h2>
+        <p style="color: var(--dim); margin-bottom: 20px;">
+            Cybersecurity specialist focused on offensive security operations, threat intelligence, and dark web research. 
+            Experience in penetration testing, red team operations, OSINT investigations, and network security.
+        </p>
         
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I'm a hacker focused on OSINT, bug bounties, and dark web crawling. Check my recent talks and tools below.</p> <!-- Expand based on your X posts/themes -->
-        </section>
-        
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul id="repo-list"></ul> <!-- Dynamically populated via JS -->
-        </section>
-        
-        <section id="x-feed">
-            <h2>My X Feed</h2>
-            <!-- Embed code from https://publish.x.com -->
-            <blockquote class="twitter-timeline" data-theme="dark" data-height="600">
-                <a class="twitter-timeline" href="https://twitter.com/_BashBunny_?ref_src=twsrc%5Etfw">Tweets by _BashBunny_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </blockquote>
-            <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
-        </section>
-    </div>
+        <div class="tags">
+            <span class="tag">Pentesting</span>
+            <span class="tag">Red Team</span>
+            <span class="tag">OSINT</span>
+            <span class="tag">Threat Intel</span>
+            <span class="tag">Dark Web Research</span>
+            <span class="tag">Network Security</span>
+            <span class="tag">Linux Systems</span>
+            <span class="tag">Python/Bash</span>
+        </div>
+    </section>
     
-    <script src="script.js"></script>
+    <!-- Projects -->
+    <section data-section="PROJECTS">
+        <h2>Projects</h2>
+        
+        <div class="projects">
+            <div class="project">
+                <h3>Dark Web Crawler</h3>
+                <p>Custom Bash-based crawler for dark web research and OSINT operations. Integrates with Shodan and Censys APIs for intelligence gathering.</p>
+                <div class="project-tech">bash · tor · osint · python</div>
+            </div>
+            
+            <div class="project">
+                <h3>NixOS Pentesting Environment</h3>
+                <p>Declarative, reproducible pentesting distribution built on NixOS. Optimized for red team operations with isolated environment support.</p>
+                <div class="project-tech">nixos · pentesting · devops</div>
+            </div>
+            
+            <div class="project">
+                <h3>Security Toolchain</h3>
+                <p>Curated collection of offensive security tools and scripts for automated reconnaissance, exploitation, and post-exploitation.</p>
+                <div class="project-tech">python · bash · automation</div>
+            </div>
+            
+            <div class="project">
+                <h3>OSINT Framework</h3>
+                <p>Comprehensive framework for open-source intelligence gathering, combining multiple data sources and analysis techniques.</p>
+                <div class="project-tech">osint · intelligence · research</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Talks -->
+    <section data-section="TALKS">
+        <h2>Talks & Presentations</h2>
+        
+        <div class="talk">
+            <h3>Building Your Own Dark Web Crawler for OSINT Operations</h3>
+            <div class="talk-date">Upcoming · 2025</div>
+            <p>Practical methodology for constructing custom dark web crawlers using Bash and integrating with OSINT platforms like Shodan and Censys.</p>
+        </div>
+        
+        <div class="talk">
+            <h3>NixOS for Offensive Security</h3>
+            <div class="talk-date">2024</div>
+            <p>Exploring NixOS as a platform for creating reproducible, declarative pentesting environments with advanced isolation capabilities.</p>
+        </div>
+        
+        <div class="talk">
+            <h3>Dark Web Intelligence: Research Methodologies</h3>
+            <div class="talk-date">2024</div>
+            <p>Systematic approaches to dark web research combining custom crawlers, threat intelligence platforms, and ethical research frameworks.</p>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section data-section="CONTACT">
+        <h2>Contact</h2>
+        <p style="color: var(--dim); margin-bottom: 15px;">Available for:</p>
+        <ul class="contact-list">
+            <li>Penetration Testing & Red Team Engagements</li>
+            <li>Security Research & Vulnerability Assessment</li>
+            <li>OSINT & Threat Intelligence Operations</li>
+            <li>Conference Speaking & Training</li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>Bash Bunny © 2025</p>
+    </footer>
 </body>
 </html>
