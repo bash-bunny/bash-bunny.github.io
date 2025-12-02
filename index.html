@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bash Bunny - Hacker Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="matrix"></canvas> <!-- Matrix rain background -->
+    
+    <div class="container">
+        <header>
+            <img src="https://pbs.twimg.com/profile_images/1960042264396181504/VlPeAjob.jpg" alt="Profile Pic" class="profile-pic">
+            <h1>Bash Bunny</h1>
+            <p class="bio">Hacking | Linux | Bugbounty | OSINT #DarkOSINT ESP | ENG</p> <!-- Copy from your X bio -->
+        </header>
+        
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm a hacker focused on OSINT, bug bounties, and dark web crawling. Check my recent talks and tools below.</p> <!-- Expand based on your X posts/themes -->
+        </section>
+        
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul id="repo-list"></ul> <!-- Dynamically populated via JS -->
+        </section>
+        
+        <section id="x-feed">
+            <h2>My X Feed</h2>
+            <!-- Embed code from https://publish.x.com -->
+            <blockquote class="twitter-timeline" data-theme="dark" data-height="600">
+                <a class="twitter-timeline" href="https://twitter.com/_BashBunny_?ref_src=twsrc%5Etfw">Tweets by _BashBunny_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </blockquote>
+            <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+        </section>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
